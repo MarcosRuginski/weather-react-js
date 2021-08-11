@@ -1,81 +1,28 @@
 module.exports = {
   env: {
     browser: true,
-    es6: true,
+    es6: true
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'prettier',
-    'prettier/react',
-    'plugin:react-hooks/recommended',
-  ],
+  extends: ["airbnb", "prettier", "prettier/react"],
   globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly",
+    __DEV__: 'readonly'
   },
-  parser: 'babel-eslint',
+  parser: "babel-eslint",
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
     ecmaVersion: 2018,
-    sourceType: 'module',
+    sourceType: "module"
   },
-  plugins: ['react', 'prettier', 'react-hooks'],
+  plugins: ["react", "prettier"],
   rules: {
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
-      },
-    ],
-    'react/jsx-filename-extension': ['warn', { extensions: ['.jsx', '.js'] }],
-    'import/prefer-default-export': 'off',
-    'import/order': 'off',
-    'import/extensions': 'off',
-    'jsx-a11y/anchor-is-valid': 'off',
-    eqeqeq: 'off',
-    'import/no-unresolved': [
-      'error',
-      {
-        ignore: [''],
-      },
-    ],
-    'jsx-a11y/alt-text': 'off',
-    'no-plusplus': 'off',
-    'no-restricted-globals': 'off',
-    'react/jsx-props-no-spreading': 'off',
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
-    'react/forbid-prop-types': 'off',
-    'react/react-in-jsx-scope': 'off',
-    'react/no-array-index-key': 'off',
-    'rest-spread-spacing': 'off',
-    'react/no-children-prop': 'off',
-    'jsx-a11y/anchor-has-content': 'off',
-    'react/button-has-type': 'off',
-    'no-nested-ternary': 'off',
-    'jsx-a11y/control-has-associated-label': 'off',
-    'no-underscore-dangle': 'off',
-    'global-require': 'off',
-    'jsx-a11y/click-events-have-key-events': 'off',
-    'jsx-a11y/no-static-element-interactions': 'off',
-    'import/no-extraneous-dependencies': 'off',
-    'no-param-reassign': [
-      'error',
-      {
-        props: true,
-        ignorePropertyModificationsFor: [
-          'draft',
-          'sketch',
-          'outline',
-          'ref',
-          'values',
-        ],
-      },
-    ],
-    'array-callback-return': 'off',
-    'react/static-property-placement': 'off',
-  },
-};
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": ["warn", { extensions: [".jsx", ".js"] }],
+    "import/prefer-default-export": "off",
+    "no-param-reassign": "off",
+    "no-console": ["error", { allow: ["tron"] }]
+  }
+}

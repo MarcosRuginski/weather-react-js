@@ -1,7 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import HomeComponent from '../components/Home'
-import styles from '../styles/Home.module.css'
+import React from 'react';
+import Head from 'next/head';
+import HomeComponent from '../components/Home';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
@@ -13,15 +13,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-        How is the weather now? 
-        </h1>
+        <h1 className={styles.title}>How is the weather now?</h1>
       </main>
       <HomeComponent />
 
-      <footer className={styles.footer}>
-          Made by Macos Roberto Ruginski
-      </footer>
+      <footer className={styles.footer}>Made by Macos Roberto Ruginski</footer>
     </div>
-  )
+  );
 }
