@@ -26,7 +26,7 @@ const Input = ({ name, ...rest }) => {
       name={name}
       ref={inputRef}
       type="text"
-      placeholder="Type your username"
+      placeholder="Search city here"
       {...rest}
     />
   );
