@@ -24,5 +24,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'no-param-reassign': 'off',
     'no-console': ['error', { allow: ['tron'] }],
+    'react/no-unescaped-entities': 'off',
+    '@next/next/no-page-custom-font': 'off',
   },
 };
