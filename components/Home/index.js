@@ -1,14 +1,17 @@
-/* eslint-disable */
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import fromUnixTime from 'date-fns/fromUnixTime';
 import { format } from 'date-fns';
+
+// Components
+import Now from './Now';
 
 // Styles
 import styles from '../../styles/Home.module.css';
 
 export default function Home({ data }) {
   const [date, setDate] = useState([]);
-  const [informations, setInformations] = useState({
+  /* const [informations, setInformations] = useState({
     lat: -26.2503,
     lon: -49.3786,
     timezone: 'America/Sao_Paulo',
@@ -355,7 +358,7 @@ export default function Home({ data }) {
         uvi: 3,
       },
     ],
-  });
+  }); */
 
   useEffect(() => {
     /* axios
@@ -376,28 +379,9 @@ export default function Home({ data }) {
     <>
       <div className={styles.grid}>
         <div>
-          <div className={styles.home}>
-            {console.log('informations', informations)}
-            {console.log('data', data)}
-            <div className={styles.card}>
-              <p className={styles.today}>Now</p>
-              <p className={styles.city}>
-                {data.name} as of {date.toString()}
-              </p>
+          <Now data={data} date={date} />
 
-              <p className={styles.temperature}>
-                {Math.round(data.main.temp)}º
-              </p>
-              <p>{data.weather[0].description}</p>
-
-              <p>
-                {Math.round(data.main.temp_min)}/
-                {Math.round(data.main.temp_max)}
-              </p>
-            </div>
-          </div>
-
-          <div className={styles.home}>
+          {/* <div className={styles.home}>
             <div className={styles.card}>
               <p className={styles.today}>
                 Today's Forecast for São Bento do Sul
@@ -416,9 +400,9 @@ export default function Home({ data }) {
                 {Math.round(data.main.temp_max)}
               </p>
             </div>
-          </div>
+          </div> */}
 
-          <div className={styles.home}>
+          {/* <div className={styles.home}>
             <div className={styles.card}>
               <p className={styles.today}>Daily Forecast</p>
               <p className={styles.city}>
@@ -435,7 +419,7 @@ export default function Home({ data }) {
                 {Math.round(data.main.temp_max)}
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className={styles.home}>
@@ -445,3 +429,16 @@ export default function Home({ data }) {
     </>
   );
 }
+
+Home.propTypes = {
+  data: PropTypes.shape({
+    name: PropTypes.string,
+    dt: PropTypes.string,
+    weather: PropTypes.string,
+    main: PropTypes.shape({
+      temp: PropTypes.string,
+      temp_min: PropTypes.string,
+      temp_max: PropTypes.string,
+    }),
+  }).isRequired,
+};

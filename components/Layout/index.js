@@ -58,10 +58,7 @@ export default function Layout({ children, data, setData }) {
       </main>
       {console.log('data', data)}
       {data?.name && (
-        <div className={styles.bar}>
-          {data?.name}{' '}
-          <span>({`${data?.coord?.lat}, ${data?.coord?.lon}`})</span>
-        </div>
+        <div className={styles.bar}></div>
       )}
       {children}
     </div>

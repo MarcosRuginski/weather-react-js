@@ -26,5 +26,6 @@ module.exports = {
     'no-console': ['error', { allow: ['tron'] }],
     'react/no-unescaped-entities': 'off',
     '@next/next/no-page-custom-font': 'off',
+    'import/no-unresolved': 'off',
   },
 };

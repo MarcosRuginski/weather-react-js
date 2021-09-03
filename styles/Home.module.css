@@ -21,7 +21,8 @@
 .temperature {
   font-size: 90px;
   font-weight: bold;
-  margin: 1rem 0;
+  margin-top: 1rem;
+  margin-bottom: 0;
   line-height: 90px;
 }
 
@@ -29,4 +30,17 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 0.5fr;
+}
+
+.description {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin: 0;
+}
+
+.gridTemperature {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
