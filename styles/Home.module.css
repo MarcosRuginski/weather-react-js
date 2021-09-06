@@ -44,3 +44,14 @@
   display: flex;
   justify-content: space-between;
 }
+
+.gridIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.minMax {
+  font-size: 25px;
+  font-weight: bold;
+}

@@ -433,12 +433,12 @@ export default function Home({ data }) {
 Home.propTypes = {
   data: PropTypes.shape({
     name: PropTypes.string,
-    dt: PropTypes.string,
-    weather: PropTypes.string,
+    dt: PropTypes.number,
+    weather: PropTypes.array,
     main: PropTypes.shape({
-      temp: PropTypes.string,
-      temp_min: PropTypes.string,
-      temp_max: PropTypes.string,
+      temp: PropTypes.number,
+      temp_min: PropTypes.number,
+      temp_max: PropTypes.number,
     }),
   }).isRequired,
 };

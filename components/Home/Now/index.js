@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import PropTypes from 'prop-types';
 
 // Styles
@@ -18,9 +19,21 @@ export default function Now({ data, date }) {
             <p className={styles.description}>{data.weather[0].description}</p>
           </div>
 
-          <p>
-            {Math.round(data.main.temp_min)}/{Math.round(data.main.temp_max)}
-          </p>
+          <div className={styles.gridIcon}>
+            <p className={styles.minMax}>
+              {Math.round(data.main.temp_min)}º /{' '}
+              {Math.round(data.main.temp_max)}º
+            </p>
+
+            {data.weather[0].main === 'Clouds' && (
+              <Image
+                src="/images/nublado.svg"
+                alt="nublado"
+                height={160}
+                width={160}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -30,11 +43,11 @@ export default function Now({ data, date }) {
 Now.propTypes = {
   data: PropTypes.shape({
     name: PropTypes.string,
-    weather: PropTypes.string,
+    weather: PropTypes.array,
     main: PropTypes.shape({
-      temp: PropTypes.string,
-      temp_min: PropTypes.string,
-      temp_max: PropTypes.string,
+      temp: PropTypes.number,
+      temp_min: PropTypes.number,
+      temp_max: PropTypes.number,
     }),
   }).isRequired,
   date: PropTypes.string.isRequired,
