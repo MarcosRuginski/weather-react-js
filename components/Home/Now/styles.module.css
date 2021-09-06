@@ -1,13 +1,3 @@
-.home {
-  padding: 20px;
-}
-
-.card {
-  background-color: #F9F7F7;
-  padding: 20px;
-  border-radius: 10px;
-}
-
 .today {
   margin: 0;
   font-weight: bold;
@@ -18,6 +8,12 @@
   margin: 0;
 }
 
+.gridTemperature {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
 .temperature {
   font-size: 90px;
   font-weight: bold;
@@ -26,23 +22,11 @@
   line-height: 90px;
 }
 
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 0.5fr;
-}
-
 .description {
   font-size: 20px;
   text-transform: capitalize;
   font-weight: bold;
   margin: 0;
-}
-
-.gridTemperature {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
 }
 
 .gridIcon {

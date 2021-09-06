@@ -1,15 +1,15 @@
-/* eslint-disable */
 import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
 import { Form } from '@unform/web';
 import axios from 'axios';
 
 // Styles
-import styles from '../../styles/Header.module.css';
+import styles from './styles.module.css';
 
 // Components
 import TextInput from '../Form/TextInput';
 
-export default function Layout({ children, data, setData }) {
+export default function Layout({ children, setData }) {
   const formRef = useRef();
 
   function handleFormSubmit(data) {
@@ -27,40 +27,52 @@ export default function Layout({ children, data, setData }) {
   }
 
   return (
-    <div className={styles.limit}>
+    <div className={styles.content}>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          How's the
-          <br />
-          weather
-          <br />
-          outside?
-        </h1>
+        <div className={styles.limit}>
+          <div className={styles.grid}>
+            <h1 className={styles.title}>
+              How's the
+              <br />
+              weather
+              <br />
+              outside?
+            </h1>
 
-        <Form className={styles.form} ref={formRef} onSubmit={handleFormSubmit}>
-          <div style={{ display: 'flex' }}>
-            <TextInput name="city" />
-            <button type="submit">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M14.53 15.59a8.25 8.25 0 111.06-1.06l5.69 5.69a.75.75 0 11-1.06 1.06l-5.69-5.69zM2.5 9.25a6.75 6.75 0 1111.74 4.547.746.746 0 00-.443.442A6.75 6.75 0 012.5 9.25z"
-                />
-              </svg>
-            </button>
+            <Form
+              className={styles.form}
+              ref={formRef}
+              onSubmit={handleFormSubmit}
+            >
+              <div style={{ display: 'flex' }}>
+                <TextInput name="city" />
+                <button type="submit">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M14.53 15.59a8.25 8.25 0 111.06-1.06l5.69 5.69a.75.75 0 11-1.06 1.06l-5.69-5.69zM2.5 9.25a6.75 6.75 0 1111.74 4.547.746.746 0 00-.443.442A6.75 6.75 0 012.5 9.25z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </Form>
           </div>
-        </Form>
+        </div>
       </main>
-      {console.log('data', data)}
-      {data?.name && (
-        <div className={styles.bar}></div>
-      )}
-      {children}
+
+      <div className={styles.bar} />
+
+      <div className={styles.limit}>{children}</div>
     </div>
   );
 }
+
+Layout.propTypes = {
+  children: PropTypes.any.isRequired,
+  setData: PropTypes.any.isRequired,
+};

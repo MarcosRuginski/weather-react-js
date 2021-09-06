@@ -1,9 +1,23 @@
+.limit {
+  width: 1200px;
+  margin: auto;
+}
+
 .main {
+  background-color: #112D4E;
+  padding: 10px 20px;
+}
+
+.bar {
+  background-color: #3F72AF;
+  padding: 10px 20px;
+  color: #F9F7F7;
+}
+
+.grid {
   align-items: center;
   display: grid;
   grid-template-columns: auto 1fr;
-  background-color: #112D4E;
-  padding: 10px 20px;
 }
 
 .title {
@@ -13,6 +27,7 @@
   letter-spacing: 0.3px;
   border: 2px solid #ffff;
   padding: 1rem;
+  border-radius: 10px;
 }
 
 .form {
@@ -28,6 +43,7 @@
   padding: 15px 15px;
   border: none;
   background-color: #F9F7F7;
+  outline: none;
 }
 
 .form button {
@@ -43,23 +59,7 @@
   background-color: #DBE2EF;
 }
 
-.limit {
-  font-family: 'Poppins', sans-serif;
-  background-color: #DBE2EF;
+.content {
   min-height: 100vh;
-}
-
-.limit * {
-  outline: none;
-}
-
-.bar {
-  background-color: #3F72AF;
-  padding: 10px 20px;
-  color: #F9F7F7;
-}
-
-.bar span {
-  font-size: 10px;
-  font-weight: bold;
+  background-color: #DBE2EF;
 }

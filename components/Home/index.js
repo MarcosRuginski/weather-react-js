@@ -4,10 +4,12 @@ import fromUnixTime from 'date-fns/fromUnixTime';
 import { format } from 'date-fns';
 
 // Components
+import TodayComplete from './TodayComplete';
 import Now from './Now';
 
 // Styles
-import styles from '../../styles/Home.module.css';
+import styles from './styles.module.css';
+import Card from '~/components/Card';
 
 export default function Home({ data }) {
   const [date, setDate] = useState([]);
@@ -378,52 +380,12 @@ export default function Home({ data }) {
   return (
     <>
       <div className={styles.grid}>
-        <div>
+        <div className={styles.blocks}>
           <Now data={data} date={date} />
-
-          {/* <div className={styles.home}>
-            <div className={styles.card}>
-              <p className={styles.today}>
-                Today's Forecast for São Bento do Sul
-              </p>
-              <p className={styles.city}>
-                {data.name} as of {date.toString()}
-              </p>
-
-              <p className={styles.temperature}>
-                {Math.round(data.main.temp)}º
-              </p>
-              <p>{data.weather[0].description}</p>
-
-              <p>
-                {Math.round(data.main.temp_min)}/
-                {Math.round(data.main.temp_max)}
-              </p>
-            </div>
-          </div> */}
-
-          {/* <div className={styles.home}>
-            <div className={styles.card}>
-              <p className={styles.today}>Daily Forecast</p>
-              <p className={styles.city}>
-                {data.name} as of {date.toString()}
-              </p>
-
-              <p className={styles.temperature}>
-                {Math.round(data.main.temp)}º
-              </p>
-              <p>{data.weather[0].description}</p>
-
-              <p>
-                {Math.round(data.main.temp_min)}/
-                {Math.round(data.main.temp_max)}
-              </p>
-            </div>
-          </div> */}
+          <TodayComplete />
         </div>
-
-        <div className={styles.home}>
-          <div className={styles.card}>Prop</div>
+        <div className={styles.blocks}>
+          <Card>Announcement</Card>
         </div>
       </div>
     </>

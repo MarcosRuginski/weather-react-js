@@ -1,0 +1,13 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  gap: 20px;
+  padding: 20px;
+  padding: 20px 0;
+}
+
+.blocks {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}

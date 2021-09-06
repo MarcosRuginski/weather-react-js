@@ -23,9 +23,16 @@ module.exports = {
     'react/jsx-filename-extension': ['warn', { extensions: ['.jsx', '.js'] }],
     'import/prefer-default-export': 'off',
     'no-param-reassign': 'off',
-    'no-console': ['error', { allow: ['tron'] }],
+    'no-console': 'off',
     'react/no-unescaped-entities': 'off',
     '@next/next/no-page-custom-font': 'off',
-    'import/no-unresolved': 'off',
+    'import/extensions': 'off',
+    'react/forbid-prop-types': 'off',
+    'import/no-unresolved': [
+      'error',
+      {
+        ignore: [''],
+      },
+    ],
   },
 };
