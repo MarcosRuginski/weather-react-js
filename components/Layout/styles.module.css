@@ -15,9 +15,9 @@
 }
 
 .grid {
+  display: flex;
   align-items: center;
-  display: grid;
-  grid-template-columns: auto 1fr;
+  justify-content: space-between;
 }
 
 .title {
@@ -38,7 +38,6 @@
 
 .form input {
   font-size: 16px;
-  min-width: 500px;
   border-radius: 10px 0 0 10px;
   padding: 15px 15px;
   border: none;
@@ -51,15 +50,46 @@
   outline: none;
   border: 0;
   cursor: pointer;
-  background-color: #F9F7F7;
-  padding: 1rem 2rem;
+  background-color: #DBE2EF;
+  transition: all 0.3s;
 }
 
 .form button:hover {
-  background-color: #DBE2EF;
+  background-color: var(--secondary);
+}
+
+.form button:hover  svg{
+  fill: var(--white);
 }
 
 .content {
   min-height: 100vh;
   background-color: #DBE2EF;
+}
+
+.gridForm {
+  width: 393px;
+  display: grid;
+  grid-template-columns: 1fr 50px;
+}
+
+@media (max-width: 1200px) {
+  .limit {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    display: block;
+  }
+
+  .gridForm {
+    grid-template-columns: 1fr 50px;
+    width: 100%;
+  }
+
+  .form button {
+    padding: 0;
+  }
 }

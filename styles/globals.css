@@ -13,3 +13,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --primary: #112D4E;
+  --secondary: #3F72AF;
+  --terciary: #DBE2EF;
+  --quateriary: #F9F7F7;
+  --white: #fff;
+}

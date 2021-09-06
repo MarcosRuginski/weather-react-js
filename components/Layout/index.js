@@ -43,8 +43,9 @@ export default function Layout({ children, setData }) {
               className={styles.form}
               ref={formRef}
               onSubmit={handleFormSubmit}
+              autoComplete="off"
             >
-              <div style={{ display: 'flex' }}>
+              <div className={styles.gridForm}>
                 <TextInput name="city" />
                 <button type="submit">
                   <svg
