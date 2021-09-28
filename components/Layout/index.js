@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { Form } from '@unform/web';
 import axios from 'axios';
 
+// Icons
+import { FaUmbrella } from 'react-icons/fa';
+
 // Styles
 import styles from './styles.module.css';
 
@@ -31,13 +34,10 @@ export default function Layout({ children, setData }) {
       <main className={styles.main}>
         <div className={styles.limit}>
           <div className={styles.grid}>
-            <h1 className={styles.title}>
-              How's the
-              <br />
-              weather
-              <br />
-              outside?
-            </h1>
+            <span className={styles.title}>
+              <FaUmbrella />
+              <h1>Como está o clima?</h1>
+            </span>
 
             <Form
               className={styles.form}

@@ -9,7 +9,7 @@ import Card from '~/components/Card';
 export default function Now({ data, date }) {
   return (
     <Card>
-      <p className={styles.today}>Now</p>
+      <h2 className={styles.today}>Agora</h2>
       <p className={styles.city}>
         {data.name} as of {date.toString()}
       </p>
@@ -50,5 +50,5 @@ Now.propTypes = {
       temp_max: PropTypes.number,
     }),
   }).isRequired,
-  date: PropTypes.string.isRequired,
+  date: PropTypes.array.isRequired,
 };

@@ -22,12 +22,32 @@
 
 .title {
   color: #ffff;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  border: 2px solid #ffff;
   padding: 1rem;
   border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  /* Alinhamento */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title h1 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  margin-left: 10px;
+}
+
+.title svg {
+  font-size: 50px;
+}
+
+/* Efeitos Title */
+.title:hover {
+
+  color: var(--secondary);
 }
 
 .form {

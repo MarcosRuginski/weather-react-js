@@ -382,7 +382,7 @@ export default function Home({ data }) {
       <div className={styles.grid}>
         <div className={styles.blocks}>
           <Now data={data} date={date} />
-          <TodayComplete />
+          <TodayComplete data={data} />
         </div>
         <div className={styles.blocks}>
           <Card>Announcement</Card>
